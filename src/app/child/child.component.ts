@@ -9,6 +9,7 @@ export class ChildComponent implements OnChanges {
 
   @Input() loggedIn: boolean;
     message: string;
+    name: 'Hakkim' ;
 
 //   get loggedIn(): boolean {
 //     return this._loggedIn;
@@ -28,12 +29,14 @@ export class ChildComponent implements OnChanges {
   ngOnChanges(changes : SimpleChange) {
     console.log(changes);
     const loggedInValue = changes['loggedIn'];
-    if(loggedInValue.currentValue === true){
+    if(loggedInValue.currentValue === true) {
       this.message = ' Welcome back hakkim!!';
-    }else{
+    } else {
       this.message = 'Please log in';
     }
+    } 
+    greetHakkim() {
+      alert("Hey Hakkim!!!");
     }
-    
   }
  
